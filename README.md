@@ -67,3 +67,12 @@ This command creates a credentials file at `~/.aws/credentials`. Boto3 automatic
 ```
 python3 main.py
 ```
+## Example Output
+
+When executed, the script generates an Excel sheet containing this type of the following details:
+
+| Region | Instance Name | Tags | State | OS Type | Instance Type | Availability Zone | Hourly Cost ($) | Daily Cost ($) | Monthly Cost ($) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
+| ap-south-1 | Dummy | Name=Dummy | running | Linux | t3.micro | ap-south-1b | 0.0112 | 0.27 | 8.06 |
+| us-east-1 | Windows | Name=Windows | running | Windows | t3.micro | us-east-1c | 0.0196 | 0.47 | 14.11 |
+| us-east-1 | Linux | Name=Linux | stopped | Linux | t2.small | us-east-1d | 0 | 0 | 0 |

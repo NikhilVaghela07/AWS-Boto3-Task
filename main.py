@@ -5,6 +5,7 @@ from openpyxl.styles import Font
 
 ec2_client = boto3.client('ec2')
 pricing_client = boto3.client('pricing', region_name='us-east-1')
+print(pricing_client)
 region_response = ec2_client.describe_regions()
 
 # this fucntion will create empty sheet and append header in sheet
@@ -74,9 +75,6 @@ def get_hourly_price(region, instance_type, operating_system, price_cache):
     )
     if not result["PriceList"]:
         price_cache[key] = None
-        return None
-
-    if not result["PriceList"]:
         return None
 
     product = json.loads(result["PriceList"][0])
